@@ -1,0 +1,42 @@
+<%- include('./base/header.ejs') %>
+<div class="container">
+    <div class="alert bg-danger my-2" style="color: antiquewhite;">
+        <h2 class="text-center" style="color: antiquewhite;">Add new Keddi</h2>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form action="/add/student" method="post">
+                <div>
+                    <label for=""class='form-label'>Roll no.: </label>
+                    <input type="text" name="rollno" class="form-control" placeholder="Enter your Roll No.">
+                </div>
+                <div>
+                    <label for=""class='form-label'>First name: </label>
+                    <input type="text" name="firstName" class="form-control" placeholder=" Enter your first name">
+                </div>
+                <div>
+                    <label for=""class='form-label'>Last name: </label>
+                    <input type="text" name="lastName" class="form-control" placeholder=" Enter your Last name">
+                </div>
+                <div>
+                    <label for=""class='form-label'>Father's name: </label>
+                    <input type="text" name="fatherName" class="form-control" placeholder=" Enter your Father's name">
+                </div>
+                <div>
+                    <label for=""class='form-label'>Adhar Card No. </label>
+                    <input type="text" name="adharCardNo" class="form-control" placeholder=" Enter your Adhar card no">
+                </div>
+                <div>
+                    <label for=""class='form-label'>Mobile no. </label>
+                    <input type="text" name="mobileNo" class="form-control" placeholder=" Enter your Mobile no">
+                </div>
+                <input type="submit" value="Add Student" class="btn btn-warning my-3 w-100">
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+<% include('./base/footer.ejs') %>

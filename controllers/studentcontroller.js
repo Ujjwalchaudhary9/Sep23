@@ -25,7 +25,9 @@ async function getStudentForEdit(req,res) {
         console.log(id);
         let student = await Student.findOne({_id: id});
         console.log(student);
-        res.send(student)
+        res.render('studentforupdate',{
+            student: student
+        })
     } catch (error) {
         console.log('ERROR');
     }
@@ -33,5 +35,6 @@ async function getStudentForEdit(req,res) {
 }
 module.exports = {
     addStudent,
-    getStudent
+    getStudent,
+    getStudentForEdit
 }
