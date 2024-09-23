@@ -11,4 +11,7 @@ router.post('/add/student',(req,res)=>{
 router.get('/students',(req,res)=>{
     studentcontroller.getStudent(req,res)
 })
+router.get('/edit/student/page/:id',(req,res)=>{
+    studentcontroller.getStudentForEdit(req,res);
+})
 module.exports= router;

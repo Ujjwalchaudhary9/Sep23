@@ -19,6 +19,18 @@ async function getStudent(req,res) {
         console.log('Error')
     }
 }
+async function getStudentForEdit(req,res) {
+    try {
+        let id = req.params.id;
+        console.log(id);
+        let student = await Student.findOne({_id: id});
+        console.log(student);
+        res.send(student)
+    } catch (error) {
+        console.log('ERROR');
+    }
+    
+}
 module.exports = {
     addStudent,
     getStudent
