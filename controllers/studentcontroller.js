@@ -33,8 +33,30 @@ async function getStudentForEdit(req,res) {
     }
     
 }
+async function updateStudent(req,res) {
+    try {
+        let id =req.params.id;
+        let student = await Student.findOne({_id:id});
+        console.log(student,'student');
+        student.rollno= req.body.rollno;
+        student.firstName= req.body.firstName;
+        student.lastName= req.body.lastName;
+        student.fatherName= req.body.fatherName;
+        student.adharCardNo= req.body.adharCardNo;
+        student.mobileNo= req.body.mobileNo;
+        await student.save();
+        let students = await Student.find({});
+        res.render('studentlist',{
+            students: students
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+}
 module.exports = {
     addStudent,
     getStudent,
-    getStudentForEdit
+    getStudentForEdit,
+    updateStudent
 }
